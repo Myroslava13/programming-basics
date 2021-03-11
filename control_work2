@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int suma() {
+    int sum = 1, k;
+    while (k != 0)
+    {
+        sum *= k % 10;
+        k /= 10;
+    }
+    
+    return k;
+}
+int main() {
+    int sum, k, n;
+    cout << "Enter n: ";
+    cin >> n;
+    if (sum = n)
+        return k;
+
+
+    cout << k << endl;
+    system("pause");
+    return 0;
+}
