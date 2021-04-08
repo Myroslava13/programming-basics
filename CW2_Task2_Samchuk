@@ -1,0 +1,31 @@
+#include <iostream>;
+using namespace std;
+int main() {
+
+
+int S1,S2, i,j, N, M, a[100][100];
+cout << "N="; cin >> N;
+cout << "M=";cin >> M;
+cout << "Enter matrix: \n";
+for (i = 0;i < N;i++)
+	for (j = 0;j < M;j++)
+		cin >> a[i][j];
+cout << "matrix \n";
+for (i = 0;i < N;i++) {
+	for (j = 0;j < M;j++)
+		cout << a[i][j] << "\t";
+	cout << endl;
+}
+
+for (S1 = i = 0; i < N; i++)
+	for (j = 0;j < M;j++)
+		if (j > i) S1 += a[i][j];
+for (S2 = i = 0; i < N; i++)
+	for (j = 0;j < M;j++)
+		if (j < i) S2 += a[i][j];
+if (S1 > S2) cout << "S=" << S1;
+else cout << "S=" << S2;
+return 0;
+
+
+}
