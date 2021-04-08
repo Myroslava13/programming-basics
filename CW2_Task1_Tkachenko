@@ -1,0 +1,24 @@
+#include <iostream> 
+using namespace std;
+ 
+int main()
+{
+    int i=0, sum=0;
+    double d, eps=1e-9;
+    int a[1048576/4];    
+    
+    while (1)
+    {               
+        cin >> a[i];
+        sum+=a[i];
+        if (a[i]==0) break;        
+        i++;
+    }           
+    cout << i << "\n";
+    d=(double)sum/i;      
+    
+    for(int k = 0; k < i; k++)    
+        if(a[k]-d>eps) cout << a[k] << " ";
+    cout << "\n";
+    return 0;
+}
