@@ -1,0 +1,47 @@
+#include <iostream>
+
+#include <bits/stdc++.h>
+ 
+    using namespace std;
+ 
+int main() 
+{
+    int n;
+    cout << "Введіть розмір матриці:\n";
+    cout << "n = ";
+    cin >> n;
+    
+    int** a = new int*[n];
+    for (int i = 0; i < n; i++) 
+    {
+        a[i] = new int[n];
+    }
+    
+    cout << "Введіть елементи матриці:\n";
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            cin >> a[i][j];
+        }
+    }
+    
+    cout << "Матриця повернута на 90 градусів проти годинникової стрілки:\n";
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << a[j][n-i-1] << " ";
+        }
+        cout << "\n";
+    }
+    
+    for (int i = 0; i < n; i++) 
+    {
+        delete[] a[i];
+    }
+    
+    delete[] a;
+    system("pause");
+    return 0;
+}
