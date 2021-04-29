@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+#include<fstream>
+using namespace std;
+void elminate(string& Senth)
+{ 
+	bool cap = true; 
+for (unsigned int i = 0; i <= Senth.length(); i++) 
+ { 
+	if (isalpha(Senth[i]) && cap == true) 
+    { 
+		Senth[i] = toupper(Senth[i]);
+		cap = false; 
+	} 
+else if (isspace(Senth[i]))
+	{ 
+		cap = true; 
+	} 
+  }
+}
+
+void reverseorder(string snth) {
+	string tmp;
+	string str = "";
+	for (int i = 0; i < snth.length(); i++)
+	{
+		if (snth[i] == ' ')
+		{
+			tmp.push_back(str);
+			str = "";
+		}
+		else
+			str += snth[i];
+		tmp.push_back(str);
+		int i;
+		for (i = tmp.size() - 1; i > 0; i--)
+			cout << tmp[i] << " ";
+		cout << elminate(tmp[0]) << endl;
+	}
+}
+int main() {
+	ofstream fout;
+	fout.open("int.txt");
+	fout << "have are you" << endl;
+	fout.close();
+	ifstream fin("int.txt");
+	char* sen = new char[100];
+	fin >> sen;
+	cout << sen << endl;
+	fin.close();
+	reverseorder(sen);
+	return 0;
+}
+
