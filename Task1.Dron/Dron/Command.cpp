@@ -38,7 +38,7 @@ void Command::RemoveDron(int idx)
 }
 void Command::PrintDrons()
 {
-	cout << "Cars:\n";
+	cout << "Drons:\n";
 	for (int i = 0; i < currentCapacity; i++)
 	{
 		cout << i << "--" << drons[i].ToString() << endl;
